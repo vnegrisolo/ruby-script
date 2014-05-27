@@ -1,13 +1,14 @@
 # RubyScript
 
-TODO: Write a gem description
+Build your scripts easy and with the ruby power.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'ruby_script'
-
+```ruby
+gem 'ruby_script', git: 'https://github.com/vnegrisolo/ruby_script.git'
+```
 And then execute:
 
     $ bundle
