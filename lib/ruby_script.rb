@@ -1,5 +1,8 @@
-require "ruby_script/version"
+require 'ruby_script/version'
+require 'active_support/core_ext'
 
 module RubyScript
-  # Your code goes here...
+  extend ActiveSupport::Autoload
+
+  autoload :Params
 end
