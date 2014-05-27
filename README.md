@@ -19,7 +19,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+- configure:
+
+```ruby
+RubyScript::Setup.define do |conf|
+  conf.log_datetime = true
+end
+```
 
 ## Contributing
 
