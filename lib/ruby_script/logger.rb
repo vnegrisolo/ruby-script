@@ -8,9 +8,7 @@ module RubyScript
     end
 
     def log_yield(msg)
-      log("##################################################")
-      log("\e[33m#{msg}\e[0m")
-      log("##################################################")
+      log("\n#{'#'*20}\n\e[33m#{msg}\e[0m\n#{'#'*20}\n")
     end
 
     def log_begin
