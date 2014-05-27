@@ -22,10 +22,15 @@ Or install it yourself as:
 - configure:
 
 ```ruby
-RubyScript::Setup.define do |conf|
+RubyScript.configure{ |conf|
   conf.log_datetime = true
-end
+}
 ```
+
+- use:
+```ruby
+```
+
 
 ## Contributing
 

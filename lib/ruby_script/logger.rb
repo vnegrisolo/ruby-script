@@ -22,7 +22,7 @@ module RubyScript
     end
 
     def datetime
-      Setup.log_datetime == false ? "" : "[#{Time.new.strftime('%d/%m/%Y-%H:%M')}]"
+      RubyScript.config.log_datetime == false ? "" : "[#{Time.new.strftime('%d/%m/%Y-%H:%M')}]"
     end
 
     def process
