@@ -1,4 +1,4 @@
-Gem.find_files("ruby_script/**/*.rb").each { |path| require path }
+Gem.find_files('ruby_script/**/*.rb').each { |path| require path }
 
 module RubyScript
 
