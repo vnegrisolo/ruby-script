@@ -2,12 +2,6 @@ require 'spec_helper'
 
 describe RubyScript do
 
-  describe '#config' do
-    it 'log_datetime default' do
-      expect(RubyScript.config.log_datetime).to be true
-    end
-  end
-
   describe '#configure' do
     it 'log_datetime set to true' do
       RubyScript.configure{ |conf| conf.log_datetime = true }
