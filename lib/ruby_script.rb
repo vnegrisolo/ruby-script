@@ -1,8 +1,4 @@
-require 'ruby_script/config'
-require 'ruby_script/logger'
-require 'ruby_script/params'
-require 'ruby_script/ruby_script_api'
-require 'ruby_script/version'
+Gem.find_files("ruby_script/**/*.rb").each { |path| require path }
 
 module RubyScript
 
