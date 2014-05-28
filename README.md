@@ -38,7 +38,6 @@ require 'ruby_script'
 RubyScript.execute(:path, :user) do
   p "use params[:your_param] to get the value passed to the script - actual params=#{params.inspect}"
   call "ls -la #{params[:path]}"
-  call "ls -la #{params[:path]}"
 end
 ```
 
