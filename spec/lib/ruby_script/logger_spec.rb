@@ -6,6 +6,7 @@ describe RubyScript::Logger do
 
   describe '.datetime' do
     it 'when nil args and empty mandatory' do
+      RubyScript.config.log_datetime = true
       expect(subject.datetime).to match(/^\[\d\d\/\d\d\/\d\d\d\d-\d\d:\d\d\]$/)
     end
 

@@ -22,19 +22,37 @@ Or install it yourself as:
 - configure:
 
 ```ruby
-RubyScript.configure{ |conf|
-  conf.log_datetime = true
-}
+require 'ruby_script'
+
+RubyScript.configure do |conf|
+  conf.log_datetime = false
+end
 ```
 
-- use:
+Write the following code to create your script:
+
+- execute:
 ```ruby
+require 'ruby_script'
+
+RubyScript.execute(:path, :user) do
+  p "use params[:your_param] to get the value passed to the script - actual params=#{params.inspect}"
+  call "ls -la #{params[:path]}"
+  call "ls -la #{params[:path]}"
+end
 ```
 
+The params the execute method receive is the mandatory ones your script demands.
+
+## Methods Supported
+
+* `call(command)` - run any shell command
+* `link_file(folder_from, folder_to, file)` - create a symbol link
+* `link_files(folder_from, folder_to)` - create some symbol links
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/ruby_script/fork )
+1. Fork it ( http://github.com/vnegrisolo/ruby_script/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
