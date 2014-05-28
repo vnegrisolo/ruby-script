@@ -4,8 +4,12 @@ describe RubyScript::Params do
 
   describe '.initialize' do
 
-    it 'when nil args and empty mandatory' do
-      expect(described_class.new( nil, [] )).to eq( {} )
+    it 'when nil args' do
+      expect(described_class.new( nil )).to eq( {} )
+    end
+
+    it 'when nil args and nil mandatory' do
+      expect(described_class.new( nil, nil )).to eq( {} )
     end
 
     it 'when empty args and empty mandatory' do

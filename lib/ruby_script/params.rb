@@ -18,7 +18,9 @@ module RubyScript
     end
 
     def validate(mandatory_params)
-      Array(mandatory_params).each do |p|
+      return unless mandatory_params
+
+      mandatory_params.each do |p|
         raise ArgumentError.new("Must have a param=#{p}.") unless self[p.to_s.downcase.to_sym]
       end
     end
