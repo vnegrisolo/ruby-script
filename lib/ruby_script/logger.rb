@@ -11,12 +11,12 @@ module RubyScript
       log("\n#{'#'*20}\n\e[33m#{msg}\e[0m\n#{'#'*20}\n")
     end
 
-    def log_begin
-      log_yield "BEGIN #{process} with ARGV='#{ARGV.inspect}'"
+    def log_begin(params)
+      log_yield "BEGIN #{process} with params=#{params}"
     end
 
-    def log_end
-      log_yield "END #{process}"
+    def log_end(params)
+      log_yield "END #{process} with params=#{params}"
     end
 
     def datetime

@@ -47,7 +47,7 @@ describe RubyScript::Logger do
       allow(subject).to receive(:process).and_return('my-script')
       allow(subject).to receive(:datetime).and_return('[now]')
       allow(ARGV).to receive(:inspect).and_return([])
-      expect(subject.log_begin).to eq("[\e[36mmy-script\e[0m] [now]: \n####################\n\e[33mBEGIN my-script with ARGV='[]'\e[0m\n####################\n")
+      expect(subject.log_begin({var1: 'value1'})).to eq("[\e[36mmy-script\e[0m] [now]: \n####################\n\e[33mBEGIN my-script with params={:var1=>\"value1\"}\e[0m\n####################\n")
     end
   end
 
@@ -55,7 +55,7 @@ describe RubyScript::Logger do
     it 'print message for the process end' do
       allow(subject).to receive(:process).and_return('my-script')
       allow(subject).to receive(:datetime).and_return('[now]')
-      expect(subject.log_end).to eq("[\e[36mmy-script\e[0m] [now]: \n####################\n\e[33mEND my-script\e[0m\n####################\n")
+      expect(subject.log_end({var1: 'value1'})).to eq("[\e[36mmy-script\e[0m] [now]: \n####################\n\e[33mEND my-script with params={:var1=>\"value1\"}\e[0m\n####################\n")
     end
   end
 
