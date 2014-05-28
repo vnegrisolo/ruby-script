@@ -36,4 +36,27 @@ describe RubyScript::Logger do
     end
   end
 
+  describe '.process' do
+    it 'return the current process' do
+      expect(subject.process).to eq('rspec')
+    end
+  end
+
+  describe '.log_begin' do
+    it 'print message for the process begin' do
+      allow(subject).to receive(:process).and_return('my-script')
+      allow(subject).to receive(:datetime).and_return('[now]')
+      allow(ARGV).to receive(:inspect).and_return([])
+      expect(subject.log_begin).to eq("[\e[36mmy-script\e[0m] [now]: \n####################\n\e[33mBEGIN my-script with ARGV='[]'\e[0m\n####################\n")
+    end
+  end
+
+  describe '.log_end' do
+    it 'print message for the process end' do
+      allow(subject).to receive(:process).and_return('my-script')
+      allow(subject).to receive(:datetime).and_return('[now]')
+      expect(subject.log_end).to eq("[\e[36mmy-script\e[0m] [now]: \n####################\n\e[33mEND my-script\e[0m\n####################\n")
+    end
+  end
+
 end
