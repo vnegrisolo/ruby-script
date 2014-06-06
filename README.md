@@ -1,6 +1,6 @@
 # Deprecated
 
-I created this gem to help me create ruby scripts, and then I found Thor[https://github.com/erikhuda/thor].
+I created this gem to help me create ruby scripts, and then I found [Thor](https://github.com/erikhuda/thor).
 In fact this gem is a nice study case for a DSL implementation.
 
 # RubyScript
